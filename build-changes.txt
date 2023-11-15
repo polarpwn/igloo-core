@@ -1,0 +1,15 @@
+./netlify.toml:2:publish = "exampleSite/public"
+./netlify.toml:3:command = "cd exampleSite && hugo --gc --minify --themesDir ../.. -b ${DEPLOY_PRIME_URL}"
+./package.json:3:    "dev:theme": "hugo server --logLevel=debug --config=hugo.yaml,../dev.toml --environment=theme --source=exampleSite --themesDir=../.. --disableFastRender -D --port 1313",
+./package.json:4:    "dev": "hugo server --source=exampleSite --themesDir=../.. --disableFastRender -D --port 1313",
+./package.json:6:    "build": "hugo --gc --minify --themesDir=../.. --source=exampleSite"
+./exampleSite/hugo.yaml:125:    base: "https://github.com/imfing/hextra/edit/main/exampleSite/content"
+./exampleSite/go.mod:1:module github.com/imfing/hextra/exampleSite
+./exampleSite/content/docs/guide/configuration.zh-cn.md:8:你可以在 `exampleSite/hugo.yaml` 中找到此站点的配置文件作为开始。
+./exampleSite/content/docs/guide/configuration.md:8:You can find the config file for this site in `exampleSite/hugo.yaml` as a good starting point.
+./.github/CONTRIBUTING.md:34:The documentation site is located in the [`exampleSite`](../exampleSite/) folder.
+./.github/CONTRIBUTING.md:74:- [`exampleSite`](../exampleSite/): The documentation site for the theme.
+./.github/CONTRIBUTING.md:87:It will start the Hugo server on `http://localhost:1313/` for the `exampleSite` content.
+./.github/workflows/pages.yml:57:            --themesDir=../.. --source=exampleSite \
+./.github/workflows/pages.yml:62:          path: ./exampleSite/public
+./dev.toml:1:# Theme development config for exampleSite
