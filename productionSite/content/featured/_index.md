@@ -1,6 +1,10 @@
 ---
-linkTitle: "Organization"
-title: Organization
+linkTitle: "Featured"
+title: Community Products
+cascade:
+  type: docs
+sidebar:
+  open: true
 ---
 
 👋 Hello! Welcome to the Hextra documentation!

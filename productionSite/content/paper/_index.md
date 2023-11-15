@@ -1,5 +1,6 @@
 ---
-title: " /ˈPeɪ.pɚ/"
+linkTitle: "/ˈPeɪ.pɚ/"
+title: "Paper"
 cascade:
   type: blog
 ---
