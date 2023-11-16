@@ -1,6 +1,6 @@
 ---
-linkTitle: "/Blɑːɡ/"
-title: "Blog"
+linkTitle: "Blog"
+title: "/Blɑːɡ/"
 cascade:
   type: docs
 ---

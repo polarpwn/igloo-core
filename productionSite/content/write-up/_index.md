@@ -1,6 +1,6 @@
 ---
-linkTitle: "/Raɪt-ʌp/"
-title: "Write-Up"
+linkTitle: "Write-Up"
+title: "/Raɪt-ʌp/"
 cascade:
   type: docs
 ---

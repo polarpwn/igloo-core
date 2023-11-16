@@ -72,15 +72,15 @@ menu:
       weight: 1
     - identifier: ctftime
       name: "CTFtime ↗"
-      url: ""
+      url: "https://ctftime.org/team/275211"
       weight: 2
     - identifier: github
       name: "GitHub ↗"
-      url: ""
+      url: "https://github.com/polarpwn/"
       weight: 4
     - identifier: dockerhub
       name: "Docker Hub ↗"
-      url: ""
+      url: "https://hub.docker.com/u/hotpotcookie"
       weight: 3
 
 params:
@@ -114,7 +114,8 @@ params:
 
   editURL:
     enable: true
-    base: "https://github.com/imfing/hextra/edit/main/exampleSite/content"
+    # base: "https://github.com/imfing/hextra/edit/main/exampleSite/content"
+    base: "https://github.com/polarpwn/polarpwn.gg/edit/main/productionSite/content"
 
   comments:
     enable: false
