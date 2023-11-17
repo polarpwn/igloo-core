@@ -21,7 +21,6 @@ Our vision is to become one of the go-to platforms of choice for others to searc
 ### Mission
 Our mission is to support the interest in publishing content for others to help the public awareness of information security in this digital world as a form of giving back to the community.
 
-
 ## Time Capsule
 Embark on our journey through time with our interactive Timeline. Explore the branches of progress, achievements, and milestones that weave the story of our organization's development. Each node unfolds a key moment, showcasing the roots of our success and the branches of future aspirations.
 {{< filetree/container >}}
@@ -32,10 +31,8 @@ Embark on our journey through time with our interactive Timeline. Explore the br
       {{< /filetree/folder >}}
     {{< /filetree/folder >}}  
     {{< filetree/folder name="2023" state="open" >}}
-      {{< filetree/folder name="Q4" state="open" >}}
-        {{< filetree/file name="```[01/12]``` - ..." >}}      
-        {{< filetree/file name="```[15/11]``` - First Deployment Integration on **Netlify**" >}}      
-      {{< /filetree/folder >}}
+      {{< filetree/file name="```[01/12]``` - ..." >}}      
+      {{< filetree/file name="```[15/11]``` - First Deployment Integration on **Netlify**" >}}      
     {{< /filetree/folder >}}
   {{< /filetree/folder >}}
 {{< /filetree/container >}}
@@ -44,8 +41,8 @@ Embark on our journey through time with our interactive Timeline. Explore the br
 Here are some of the peeps that helped to build this platform to the way it is now, as it grows to be a functioning site in society. Hop onto the [contribution](contrib) menu to learn how your role can help this platform grow even better.
 {{< cards >}}
   {{< card link="https://www.linkedin.com/in/muhammadnurirsyad/" title="Muhammad Nur Irsyad" image="/images/org/irsyad.webp" subtitle="**Technical Writer** @eetjat">}}
-  {{< card link="https://id.linkedin.com/in/muhammadnurilham/" title="Muhammad Nur Ilham" image="/images/org/ilham.webp" subtitle="**Project Managerr** @ilhamzahardjil">}}
-  {{< card link="https://www.linkedin.com/in/ihsan-zahardjil-6b63b0184/" title="Muhammad Nur Ikhsan" image="/images/org/ikhsan.webp" subtitle="**Business Development** @zahardjil">}}  
+  {{< card link="https://id.linkedin.com/in/muhammadnurilham/" title="Muhammad Nur Ilham" image="/images/org/ilham.webp" subtitle="**Project Manager** @ilhamzahardjil">}}
+  {{< card link="https://www.linkedin.com/in/ihsan-zahardjil-6b63b0184/" title="Muhammad Nur Ikhsan" image="/images/org/ikhsan.webp" subtitle="**Business Support** @zahardjil">}}  
   {{< card link="https://id.linkedin.com/in/hanifsalsabilk" title="Hanif Salsabil K." image="/images/org/hanif.webp" subtitle="**SEO Analyst** @hanif.sk">}}
 {{< /cards >}}
 

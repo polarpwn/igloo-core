@@ -1,3 +1,11 @@
+* { scrollbar-width: none; }
+
+::-webkit-scrollbar { display: none; }
+
 .hextra-filetree .inline-block {
 	width: 100%;
-}
+	overflow-x: auto; }
+
+.hextra-filetree span {
+	white-space: nowrap;
+	white-space: -moz-pre-wrap; }
