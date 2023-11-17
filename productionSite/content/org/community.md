@@ -6,187 +6,38 @@ prev: /org
 next: /org/contact
 ---
 
-## Quick Start from Template
-
-{{< icon "github" >}}&nbsp;[imfing/hextra-starter-template](https://github.com/imfing/hextra-starter-template)
-
-You will be able to quickly get started by using the above template repository.
-
-<img src="https://docs.github.com/assets/cb-77734/mw-1440/images/help/repository/use-this-template-button.webp" width="500">
-
-We have provided a [GitHub Actions workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow) which can help automatically build and deploy your site to GitHub Pages, and host it for free.
-
-[🌐 Demo ↗](https://imfing.github.io/hextra-starter-template/)
-
-## Start as New Project
-
-There are two main ways to add the Hextra theme to your Hugo project.
-
-1. **Hugo Modules (Recommended)**: The simplest and recommended method. [Hugo modules](https://gohugo.io/hugo-modules/) let you pull in the theme directly from its online source. Theme is downloaded automatically and managed by Hugo.
-
-2. **Git Submodule**: Alternatively, add Hextra as a [Git Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). The theme will be downloaded by Git and stored in your project's `themes` folder.
-
-### Setup Hextra as Hugo module
-
-#### Prerequisites
-
-Before starting, you need to have the following softwares installed:
-
-- [Hugo (extended version)](https://gohugo.io/installation/)
-- [Git](https://git-scm.com/)
-- [Go](https://go.dev/)
-
-#### Steps
-
-{{% steps %}}
-
-### Initialize a new Hugo site
-
-```shell
-$ hugo new site my-site --format=yaml
-```
-
-### Configure Hextra theme via module
-
-```shell
-# initialize hugo module
-$ cd my-site
-$ hugo mod init github.com/username/my-site
-
-# add Hextra theme
-$ hugo mod get github.com/imfing/hextra
-```
-
-Configure `hugo.yaml` to use Hextra theme by adding the following:
-
-```yaml
-module:
-  imports:
-    - path: github.com/imfing/hextra
-```
-
-### Create your first content pages
-
-Let's create new content page for the home page and the documentation page:
-
-```shell
-$ hugo new content/_index.md
-$ hugo new content/docs/_index.md
-```
-
-### Preview the site locally
-
-```shell
-$ hugo server --buildDrafts --disableFastRender
-```
-
-Voila! You can see your new site at `http://localhost:1313/`.
-
-{{% /steps %}}
-
-
-{{% details title="How to update theme?" %}}
-
-To update all Hugo modules in your project to their latest versions, run the following command:
-
-```shell
-$ hugo mod get -u
-```
-
-To update only Hextra to the [latest released version](https://github.com/imfing/hextra/releases), run the following command:
-
-```shell
-hugo mod get -u github.com/imfing/hextra
-```
-
-See [Hugo Modules](https://gohugo.io/hugo-modules/use-modules/#update-all-modules) for more details.
-
-{{% /details %}}
-
-### Setup Hextra as Git submodule
-
-#### Prerequisites
-
-Before starting, you need to have the following softwares installed:
-
-- [Hugo (extended version)](https://gohugo.io/installation/)
-- [Git](https://git-scm.com/)
-
-#### Steps
-
-{{% steps %}}
-
-### Initialize a new Hugo site
-
-```shell
-$ hugo new site my-site --format=yaml
-```
-
-### Add Hextra theme as a Git submodule
-
-```shell
-git submodule add https://github.com/imfing/hextra.git themes/hextra
-```
-
-Configure `hugo.yaml` to use Hextra theme by adding the following:
-
-```yaml
-theme: hextra
-```
-
-### Create your first content pages
-
-Let's create new content page for the home page and the documentation page:
-
-```shell
-$ hugo new content/_index.md
-$ hugo new content/docs/_index.md
-```
-
-### Preview the site locally
-
-```shell
-$ hugo server --buildDrafts --disableFastRender
-```
-
-Voila! You can see your new site at `http://localhost:1313/`.
-
-{{% /steps %}}
-
-
-When using [CI/CD](https://en.wikipedia.org/wiki/CI/CD) for Hugo website deployment, it's essential to ensure that the following command is executed before running the `hugo` command.
-
-```shell
-git submodule update --init
-```
-
-Failure to run this command will result in the theme folder not being populated with Hextra theme files, leading to a build failure.
-
-
-{{% details title="How to update theme?" %}}
-
-To update all submodules in your repository to their latest commits, run the following command:
-
-```shell
-$ git submodule update --remote
-```
-
-To update only Hextra to the latest commit, run the following command:
-
-```shell
-git submodule update --remote themes/hextra
-```
-
-See [Git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) for more details.
-
-{{% /details %}}
-
-## Next
-
-Explore the following sections to start adding more contents:
+*At **polarpwn.gg**, our main purpose is to foster an inclusive space where cybersecurity enthusiasts, professionals, and learners alike can connect, collaborate, and innovate in the realm of offensive cybersecurity. We encourage the sharing of diverse perspectives, research, projects, and insights to empower individuals and elevate the collective knowledge of the community.*
+<!--more-->
+
+## Daily Stand-Up
+Join us for our brief and focused 10-15 minute meeting designed to keep the team connected and informed. The format encourages open communication and collaboration, fostering a supportive environment for problem-solving and team cohesion. The Daily Stand-Up ensures everyone is on the same page, enhances transparency, and promotes a proactive and agile approach to our collective goals. During this daily gathering, team members will have the opportunity to communicate the agenda that list as follows:
+- Share updates on their progress
+- Celebrate accomplishments
+- Outline short-term goals
+- Highlight any potential blockers or obstacles they are facing
+- Open Q&A for any clarity and alignment if needed
+
+The meeting itself is held in [Discord]() at 10:00 AM (GMT+7), which all parties and members will be notified via both [Calendar]() and [Telegram]() Notification Bot prior to the stand-up.
 
 {{< cards >}}
-  {{< card link="../guide/organize-files" title="Organize Files" icon="document-duplicate" >}}
-  {{< card link="../guide/configuration" title="Configuration" icon="adjustments" >}}
-  {{< card link="../guide/markdown" title="Markdown" icon="markdown" >}}
+  {{< card link="community" title="Agenda" icon="book-open" subtitle="GitHub Project Board" >}}
+  {{< card link="configuration" title="Calendar" icon="calendar" subtitle="Public Google Calendar">}}
+  {{< card link="community" title="Discord" icon="chat-alt-2" subtitle="Public Discord Server" >}}
+  {{< card link="configuration" title="Telegram" icon="paper-airplane" subtitle="Open Telegram Chat Group" >}}  
+{{< /cards >}}
+
+## Forum
+Dive into the heart of our technical discussions and collaborative projects on our forum. Contribute to ongoing initiatives, share your projects, and stay updated on the latest developments in the [GitHub Discussion](https://github.com/polarpwn/polarpwn.gg/discussions). Stuff that you can open for the discussion are include:
+- Ask generic questions or technical issues
+- Highlight your contributions
+- Share your ideas or potential features that are great to be added
+
+Despite the technical issues, bug reports should still be posted at [GitHub Issues](https://github.com/polarpwn/polarpwn.gg/issues). Our maintainer will handle and move a key port of a discussion and track it as an issue of if its leading or potentially considered as one, while still referring to the discussion's ID.
+
+## Newsletter
+Stay in the cybersecurity loop with our Newsletter. Join our open community to receive timely updates on the latest blogs, write-ups, and research papers. Be the first to know about any new releases and developments in our in-house payload and security tools, ensuring you stay informed and ahead of the curve in the dynamic world of cybersecurity.
+
+{{< cards >}}
+  {{< card link="community" title="RSS Feed" icon="rss" subtitle="Hugo's built-in RSS Templates" >}}
+  {{< card link="configuration" title="Mailing List" icon="mail" subtitle="Keila Email Newsletters">}}
 {{< /cards >}}
