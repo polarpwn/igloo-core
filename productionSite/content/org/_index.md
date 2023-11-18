@@ -13,7 +13,7 @@ sidebar:
 ## Our Narrative
 *polarpwn* (Platform for Offensive Learnings, Analysis, and Research), represents a cutting-edge community dedicated to cybersecurity, specifically focusing on the offensive aspect. As a Platform for Offensive Learning, Analysis, and Research, *polarpwn.gg* creates an environment that fosters continuous learning and skill development in the field of cybersecurity. The organization serves as a hub for individuals interested in offensive cybersecurity techniques, offering a dynamic platform for sharing insights, research papers, and write-ups. Through collaborative efforts, *polarpwn.gg* encourages the exploration of innovative projects that contribute to the collective knowledge of the community, making it a vibrant space for professionals and enthusiasts alike to engage in the evolving landscape of offensive cybersecurity.
 
-Writing is one of your best mediums to learn or share something with others. Inspired by Hak5, we also intend to develop our in-house tools and payloads relevant to the security industry. By building such a community-driven platform, we hope all of the contents within this platform can be of good use for others to benefit from.
+Writing is one of your best mediums to learn or share something with others. Inspired by [Hak5](https://shop.hak5.org/blogs/payloads), we also intend to develop our in-house tools and payloads relevant to the security industry. By building such a community-driven platform, we hope all of the contents within this platform can be of good use for others to benefit from.
 
 ### Vision
 Our vision is to become one of the go-to platforms of choice for others to search similar cases or problems about infosec in general or even to try out and develop pentesting tools & payloads for our community-based arsenal.
@@ -56,7 +56,7 @@ Have questions about the project or valuable feedback to share? We welcome your 
 ## Navigation
 {{< cards >}}
   {{< card link="community" title="Community" icon="globe-alt">}}
-  {{< card link="configuration" title="Contact" icon="book-open" >}}
-  {{< card link="markdown" title="Contribution" icon="code" >}}
-  {{< card link="syntax-highlighting" title="Legal Notice" icon="document-duplicate" >}}
+  {{< card link="contact" title="Contact" icon="book-open" >}}
+  {{< card link="contrib" title="Contribution" icon="code" >}}
+  {{< card link="legal" title="Legal Notice" icon="document-duplicate" >}}
 {{< /cards >}}
