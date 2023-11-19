@@ -1,5 +1,5 @@
 ---
-title: Ethical Guidelines
+title: Contributor Covenant
 linkTitle: Code of Conduct
 cascade:
   type: docs
@@ -10,187 +10,41 @@ sidebar:
   open: true
 ---
 
-## Quick Start from Template
+*The "Code of Conduct" base on the [Contributor Covenant](https://www.contributor-covenant.org/) sets clear expectations for fostering a positive and inclusive community within our project. It emphasizes the importance of creating a welcoming environment for contributors from all backgrounds and experiences. Our Code of Conduct ensures that everyone can participate in discussions, share ideas, and collaborate respectfully.*
 
-{{< icon "github" >}}&nbsp;[imfing/hextra-starter-template](https://github.com/imfing/hextra-starter-template)
+## Our Pledge
+In the interest of fostering an open and welcoming environment, we as members, contributors, and maintainers pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
 
-You will be able to quickly get started by using the above template repository.
+## Our Standards
+Fostering a positive environment is encouraged through behaviors that exemplify respect, inclusivity, and collaborative engagement. Such actions contribute to the creation of a welcoming and supportive community include:
 
-<img src="https://docs.github.com/assets/cb-77734/mw-1440/images/help/repository/use-this-template-button.webp" width="500">
+- Using welcoming and inclusive language
+- Demonstrating empathy and kindness toward other people
+- Being respectful of differing opinions, viewpoints, and experiences
+- Giving and gracefully accepting constructive feedback
+- Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
+- Focusing on what is best not just for us as individuals, but for the overall community
 
-We have provided a [GitHub Actions workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow) which can help automatically build and deploy your site to GitHub Pages, and host it for free.
+We are committed to maintaining a community where respectful and inclusive interactions prevail, and deviations from these standards will not be tolerated. Instances of behavior encompass the following: 
 
-[🌐 Demo ↗](https://imfing.github.io/hextra-starter-template/)
+- The use of sexualized language or imagery, and sexual attention or advances of any kind
+- Trolling, insulting or derogatory comments, and personal or political attacks
+- Public or private harassment
+- Publishing others' private information, such as a physical or email address, without their explicit permission
+- Other conduct which could reasonably be considered inappropriate in a professional setting
 
-## Start as New Project
+## Our Responsibility
+Community and project maintainers are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
 
-There are two main ways to add the Hextra theme to your Hugo project.
+Community and project mantainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
 
-1. **Hugo Modules (Recommended)**: The simplest and recommended method. [Hugo modules](https://gohugo.io/hugo-modules/) let you pull in the theme directly from its online source. Theme is downloaded automatically and managed by Hugo.
+## Scope
+This Code of Conduct applies both within project spaces and in public spaces when an individual is representing the project or its community. Examples of representing a project or community include using an official project e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event. Representation of a project may be further defined and clarified by project maintainers.
 
-2. **Git Submodule**: Alternatively, add Hextra as a [Git Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). The theme will be downloaded by Git and stored in your project's `themes` folder.
+## Enforcement
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community admins that responsible for enforcement via Email on watcher@polarpwn.gg or direct message in Discord to [watcherppwn#6631]().
 
-### Setup Hextra as Hugo module
+All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
 
-#### Prerequisites
-
-Before starting, you need to have the following softwares installed:
-
-- [Hugo (extended version)](https://gohugo.io/installation/)
-- [Git](https://git-scm.com/)
-- [Go](https://go.dev/)
-
-#### Steps
-
-{{% steps %}}
-
-### Initialize a new Hugo site
-
-```shell
-$ hugo new site my-site --format=yaml
-```
-
-### Configure Hextra theme via module
-
-```shell
-# initialize hugo module
-$ cd my-site
-$ hugo mod init github.com/username/my-site
-
-# add Hextra theme
-$ hugo mod get github.com/imfing/hextra
-```
-
-Configure `hugo.yaml` to use Hextra theme by adding the following:
-
-```yaml
-module:
-  imports:
-    - path: github.com/imfing/hextra
-```
-
-### Create your first content pages
-
-Let's create new content page for the home page and the documentation page:
-
-```shell
-$ hugo new content/_index.md
-$ hugo new content/docs/_index.md
-```
-
-### Preview the site locally
-
-```shell
-$ hugo server --buildDrafts --disableFastRender
-```
-
-Voila! You can see your new site at `http://localhost:1313/`.
-
-{{% /steps %}}
-
-
-{{% details title="How to update theme?" %}}
-
-To update all Hugo modules in your project to their latest versions, run the following command:
-
-```shell
-$ hugo mod get -u
-```
-
-To update only Hextra to the [latest released version](https://github.com/imfing/hextra/releases), run the following command:
-
-```shell
-hugo mod get -u github.com/imfing/hextra
-```
-
-See [Hugo Modules](https://gohugo.io/hugo-modules/use-modules/#update-all-modules) for more details.
-
-{{% /details %}}
-
-### Setup Hextra as Git submodule
-
-#### Prerequisites
-
-Before starting, you need to have the following softwares installed:
-
-- [Hugo (extended version)](https://gohugo.io/installation/)
-- [Git](https://git-scm.com/)
-
-#### Steps
-
-{{% steps %}}
-
-### Initialize a new Hugo site
-
-```shell
-$ hugo new site my-site --format=yaml
-```
-
-### Add Hextra theme as a Git submodule
-
-```shell
-git submodule add https://github.com/imfing/hextra.git themes/hextra
-```
-
-Configure `hugo.yaml` to use Hextra theme by adding the following:
-
-```yaml
-theme: hextra
-```
-
-### Create your first content pages
-
-Let's create new content page for the home page and the documentation page:
-
-```shell
-$ hugo new content/_index.md
-$ hugo new content/docs/_index.md
-```
-
-### Preview the site locally
-
-```shell
-$ hugo server --buildDrafts --disableFastRender
-```
-
-Voila! You can see your new site at `http://localhost:1313/`.
-
-{{% /steps %}}
-
-
-When using [CI/CD](https://en.wikipedia.org/wiki/CI/CD) for Hugo website deployment, it's essential to ensure that the following command is executed before running the `hugo` command.
-
-```shell
-git submodule update --init
-```
-
-Failure to run this command will result in the theme folder not being populated with Hextra theme files, leading to a build failure.
-
-
-{{% details title="How to update theme?" %}}
-
-To update all submodules in your repository to their latest commits, run the following command:
-
-```shell
-$ git submodule update --remote
-```
-
-To update only Hextra to the latest commit, run the following command:
-
-```shell
-git submodule update --remote themes/hextra
-```
-
-See [Git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) for more details.
-
-{{% /details %}}
-
-## Next
-
-Explore the following sections to start adding more contents:
-
-{{< cards >}}
-  {{< card link="../guide/organize-files" title="Organize Files" icon="document-duplicate" >}}
-  {{< card link="../guide/configuration" title="Configuration" icon="adjustments" >}}
-  {{< card link="../guide/markdown" title="Markdown" icon="markdown" >}}
-{{< /cards >}}
+## Attribution
+This Code of Conduct is adapted from the Contributor Covenant, version 2.1, that is available at [contributor-covenant.org/version/2/1/](https://www.contributor-covenant.org/version/2/1/code_of_conduct/).
