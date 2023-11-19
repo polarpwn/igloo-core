@@ -9,3 +9,6 @@
 .hextra-filetree span {
 	white-space: nowrap;
 	white-space: -moz-pre-wrap; }
+
+.hextra-filetree .inline-flex.cursor-default.items-center {
+	padding-right: 1rem; }
