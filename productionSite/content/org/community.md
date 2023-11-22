@@ -20,10 +20,10 @@ Join us for our brief and focused 10-15 minute meeting designed to keep the team
 The meeting itself is held in [Discord]() at 10:00 AM (GMT+7), which all parties and members will be notified via both [Calendar]() and [Telegram]() Notification Bot prior to the stand-up.
 
 {{< cards >}}
-  {{< card link="community" title="Agenda" icon="book-open" subtitle="GitHub Project Board" >}}
-  {{< card link="configuration" title="Calendar" icon="calendar" subtitle="Public Google Calendar">}}
-  {{< card link="community" title="Discord" icon="chat-alt-2" subtitle="Public Discord Server" >}}
-  {{< card link="configuration" title="Telegram" icon="paper-airplane" subtitle="Open Telegram Chat Group" >}}  
+  {{< card link="" title="Agenda" icon="book-open" subtitle="GitHub Project Board" >}}
+  {{< card link="" title="Calendar" icon="calendar" subtitle="Public Google Calendar">}}
+  {{< card link="" title="Discord" icon="chat-alt-2" subtitle="Public Discord Server" >}}
+  {{< card link="" title="Telegram" icon="paper-airplane" subtitle="Open Telegram Chat Group" >}}  
 {{< /cards >}}
 
 ## Forum
@@ -38,6 +38,6 @@ Despite the technical issues, bug reports should still be posted at [GitHub Issu
 Stay in the cybersecurity loop with our Newsletter. Join our open community to receive timely updates on the latest blogs, write-ups, and research papers. Be the first to know about any new releases and developments in our in-house payload and security tools, ensuring you stay informed and ahead of the curve in the dynamic world of cybersecurity.
 
 {{< cards >}}
-  {{< card link="community" title="RSS Feed" icon="rss" subtitle="Hugo's built-in RSS Templates" >}}
-  {{< card link="configuration" title="Mailing List" icon="mail" subtitle="Keila Email Newsletters">}}
+  {{< card link="" title="RSS Feed" icon="rss" subtitle="Hugo's built-in RSS Templates" >}}
+  {{< card link="" title="Mailing List" icon="mail" subtitle="Groups.io Mailing Group">}}
 {{< /cards >}}
