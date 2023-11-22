@@ -4,13 +4,14 @@ linkTitle: Code of Conduct
 cascade:
   type: docs
 weight: 1
-next: /org/contrib/starter
+next: /org/contrib/ladder
 prev: /org/contrib
 sidebar:
   open: true
 ---
 
 *The "Code of Conduct" base on the [Contributor Covenant](https://www.contributor-covenant.org/) sets clear expectations for fostering a positive and inclusive community within our project. It emphasizes the importance of creating a welcoming environment for contributors from all backgrounds and experiences. Our Code of Conduct ensures that everyone can participate in discussions, share ideas, and collaborate respectfully.*
+<!--more-->
 
 ## Our Pledge
 In the interest of fostering an open and welcoming environment, we as members, contributors, and maintainers pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
