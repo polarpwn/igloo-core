@@ -10,7 +10,7 @@ sidebar:
   open: true
 ---
 
-Here, in the Contribution Hub, we believe in the power of community collaboration, and your contributions play a pivotal role in shaping the future of our offensive cybersecurity initiatives. Whether you're a seasoned professional or a newcomer eager to make a difference, there are numerous ways to get involved.
+*Here, in the Contribution Hub, we believe in the power of community collaboration, and your contributions play a pivotal role in shaping the future of our offensive cybersecurity initiatives. Whether you're a seasoned professional or a newcomer eager to make a difference, there are numerous ways to get involved.*
 <!--more-->
 
 ## Lookout
@@ -19,6 +19,7 @@ If this is your first contribution to ***polarpwn.gg***, please take a moment to
 ## Navigation
 {{< cards >}}
   {{< card link="coc" title="Code of Conduct" icon="information-circle">}}
+  {{< card link="ladder" title="Ladder" icon="badge-check" >}}  
   {{< card link="starter" title="Getting Started" icon="map" >}}
   {{< card link="guide" title="Guideline" icon="book-open" >}}
 {{< /cards >}}
