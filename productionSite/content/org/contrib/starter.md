@@ -45,8 +45,10 @@ Locating suitable issues to work on is simplified with the [*GitHub Search Issue
 - **Help Wanted**: Designated for issues that are suitable for contributors who may not be core maintainers. These issues provide opportunities for valuable contributions from individuals who are new to the community.
 
 ## Contributing Guide
-The Contributing Guide is your companion throughout the contribution journey. Whether you're initiating changes, opening pull requests, or navigating the review process, these guidelines are crafted to streamline your experience and foster a collaborative environment. Your contributions play a crucial role in advancing our offensive cybersecurity initiatives, and we're excited to have you as part of our community.
+The *Contributing Guide* is your companion throughout the contribution journey. Whether you're initiating changes, opening pull requests, or navigating the review process, these guidelines are crafted to streamline your experience and foster a collaborative environment. Your contributions play a crucial role in advancing our offensive cybersecurity initiatives, and we're excited to have you as part of our community.
 
+```
+### How to Submit a Contribution
 ### Which Branch to Use
 ### When to Open a Pull Request
 ### How to Get Your Pull Request Reviewed
@@ -55,4 +57,11 @@ The Contributing Guide is your companion throughout the contribution journey. Wh
 ### Checkout Code
 ### Signing Your Pull Request
 
-When it comes to on the section that you can get involved on ( blog, paper, write-up, payload, pentest-tool)
+ref:
+- https://opensource.guide/how-to-contribute/
+- https://getporter.org/docs/contribute/guide/
+```
+
+{{< callout emoji=" " type="warning" >}}
+Our website is currently undergoing active development to enhance your experience about the content in *Getting Started* section. We welcome any questions or feedback you may have as we work to bring you an even better online platform. Your patience and input are valued as we strive to make improvements
+{{< /callout >}}

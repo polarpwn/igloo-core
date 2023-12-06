@@ -14,7 +14,7 @@ sidebar:
 <!--more-->
 
 ## Lookout
-If this is your first contribution to ***polarpwn.gg***, please take a moment to review our [Code of Conduct](), which outlines the general policies fostering a respectful and inclusive environment. Once acquainted, explore our simple [tutorial]() guiding you through setting up your local environment before making your first pull request. We value your commitment to advancing offensive cybersecurity, and we're excited to have you join our community-driven initiatives. Happy contributing!
+If this is your first contribution to ***polarpwn.gg***, please take a moment to review our [*Code of Conduct*](coc/), which outlines the general policies fostering a respectful and inclusive environment. Once acquainted, explore our simple [*Contribution Tutorial*](starter/#contributing-tutorial/) guiding you through setting up your local environment before making your first pull request. We value your commitment to advancing offensive cybersecurity, and we're excited to have you join our community-driven initiatives. Happy contributing!
 
 ## Navigation
 {{< cards >}}
