@@ -22,3 +22,5 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
 :is(html[class~="dark"] .dark\:to-gray-400-org) {
   --tw-gradient-to: #dea07a var(--tw-gradient-to-position); }
+
+ul,ol li { line-height: 1.5em; }
