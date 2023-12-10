@@ -5,7 +5,6 @@ date: 2020-01-01
 authors:
   - name: monsieurDuke
     link: https://github.com/monsieurDuke
-excludeSearch: true
 cascade:
   type: docs
 weight: 100000
@@ -45,7 +44,7 @@ generate() {
 ```
 
 ### **A**. Getopts Utility
-In ```getopts``` utility, a collection of the valid option letters, which also called as ```OPTSTRING```, will determine whether the flag is argument-based or not. This type of distinction is defined by the usage of a trailing semicolon ```:``` to each responding option letter. To fetch the value from each argument-based option flag, we are going to use the built-in argument variable called ```OPTARG```, which act as a placeholder for us to assign to responding variable of the option flag. Here are the following snippets on the overall usage of ```getopts``` to get the overall gist of it from the file ```testflag-1.sh```, which can also be inpsect in [here](https://github.com/polarpwn/polarpwn.gg/blob/main/productionSite/static/script/testflag-1.sh):
+In ```getopts``` utility, a collection of the valid option letters, which also called as ```OPTSTRING```, will determine whether the flag is argument-based or not. This type of distinction is defined by the usage of a trailing semicolon ```:``` to each responding option letter. To fetch the value from each argument-based option flag, we are going to use the built-in argument variable called ```OPTARG```, which act as a placeholder for us to assign to the responding variable of the option flag. Here are the following snippets on the overall usage of ```getopts``` to get the overall gist of it from the file ```testflag-1.sh```, which can also be inpsect in [here](https://github.com/polarpwn/polarpwn.gg/blob/main/productionSite/static/script/testflag-1.sh):
 
 ```bash {linenos=table,linenostart=14,filename="testflag-1.sh"}
 #----------
@@ -77,7 +76,7 @@ $ chmod +x testflag-1.sh
 $ ./testflag-1.sh
 list of available options goes here
 
-# running it with help usage option, (-h)
+# running it with help usage option flag, (-h)
 $ ./testflag-1.sh -h
 list of available options goes here
 
@@ -103,7 +102,7 @@ try option '-h' for more information
 ```
 
 ### **B**. Positional Arguments
-In *Positional Arguments*, one of the approaches we are going to take is by creating a simple array first called ```args```. This array will act as a pool of valid option flags, including the letter-based and each corresponding keyword for the long option one. **[+]** While that array stores all the valid arguments, the special variable ```$#``` will store the total arguments that are being passed to the script. Here are the following snippets on the overall usage on positional arguments.
+In *Positional Arguments*, one of the approaches we are going to take is by creating a simple array first called ```args```. This array will act as a pool of valid option flags, including the letter-based and each corresponding keyword for the long option one. While that array stores all the valid option flags, the special variable ```$#``` in line ```16``` will store the total arguments that are being passed to the script, with a minimum of one argument or option flag. This way, we can ensure that the program wouldn't even bother to perform the ```generate()``` function from the beginning if there are no option flags that are being passed. Here are the following snippets on the overall usage on *Positional Arguments* from the file ```testflag-2.sh```, which can also be inpsect in [here](https://github.com/polarpwn/polarpwn.gg/blob/main/productionSite/static/script/testflag-2.sh):
 
 ```bash {linenos=table,linenostart=14,filename="testflag-2.sh"}
 #----------
@@ -136,42 +135,52 @@ esac
 usage
 ```
 
-The first ```if``` statement in line ```17``` is to check whether the passed raw arguments are using the valid flag format. It is determined by checking each flag that at least has the first character as a hyphen in it. Once it passes, the flag in ```$1``` will be truncated and stored in ```raw_opt``` variable so it can be compared just by word or letter from the ```args``` pool.
+In line ```17```, the first ```if``` statement is going to check whether the passed option flags by the user are using the valid format or not, which can be either ```-[a]``` or ```--[abc]```. This type of approach are mandatory since we are going to parse it manually later on, unlike using the ```getopts``` built-in parse handling. Once it passes, each option flag that denoted with a variable ```$1``` will be truncated and stored in a new variable called ```raw_opt``` so it can be compared and verified it's existence within the ```args``` pool in line ```20```. While the variable ```$1``` contains the option flag itself, the variable ```$2``` contains the string argument from each corresponding option flag, which act similarly to ```OPTARG``` from the [previous](#a-getopts-utility) section. 
 
-While the next ```if``` statement at line ```19``` is to check if the flag isn’t ```null```, the last statement at line ```20``` is used to check whether the flag exists within the ```args``` pool. The usage of ```wc``` is going to tell if the ```grep``` command is successful, which giving the output to equal to ```1```. The reason of each positional arguments can be stand still in ```$1``` and ```$2``` as the flag’s and its arguments keep iterating is caused by the usage of```shift``` command, which moves the positional arguments to always begin in ```$1``` for all the flag moving forward.
-
-Unlike using ```getopts```, we need to create our error handling ourself for invalid flag options that may be provided. Since it can't read a ```default``` case like ```getopts```, we can put those invalid cases in the ```else``` block if the flag isn't matched to any of the ```args``` pool. The rest is the same as the ```getopts``` section, which has a specific ```case``` statement to perform the ```generate()``` function if all the mandatory flags are provided.
+The main reason on why the variable ```$1``` and ```$2``` can be used for all the iterated option flag and its string argument is the usage of ```shift``` command, which moves the passed positional parameter incrementally; making the next option flag to always started in ```$1```. And unlike using ```getopts```, we need to create our error handling ourself for any invalid or unknown option flags that may be provided by a user. Since it doesn't have the ```default``` case for us to catch those occurrences, we can put those invalid cases in the ```else``` block to then perfrom the ```invalid()``` function. Here are some of the use case with different type of option flag combinations:
 
 ```bash
+# making it executable + running the script by default
 $ chmod +x testflag-2.sh
 $ ./testflag-2.sh
 list of available options goes here
 
+# running it with help usage option flag, (-h)
 $ ./testflag-1.sh -h
 list of available options goes here
 
+# running it with help usage long option flag, (--help)
 $ ./testflag-1.sh --help
 list of available options goes here
 
+# running it with all the mandatory option flag
 $ ./testflag-2.sh -n icat -s male -a 24
 list of available options goes here
 
+# running it to generate the whole complete message
 $ ./testflag-2.sh -n icat -s male -a 24 -g
 my name is icat (male)
 i am 24 years old
 
+# running it to generate the whole complete message in long option flag
 $ ./testflag-2.sh --name icat --sex male --age 24 --generate
 my name is icat (male)
 i am 24 years old
 
+# running it with missing mandatory option flag, (--age)
+$ ./testflag-2.sh --name icat --sex male --generate
+testflag: detecting improper option
+try option '-h' for more information
+
+# running it with invalid / unkown option flag, (-z)
 $ ./testflag-2.sh --name icat --sex male --age 24 -z
 ./testflag-2.sh: illegal option -- z
 testflag: detecting improper option
 try option '-h' for more information
 ```
 
-## The Verdict Is In
-To have a script that handles kinds of flags, both ```getopts``` and positional arguments serves well in terms of parsing it. While ```getopts``` more towards simplicity and readability of the overall workflow, using positional arguments and parsing them manually may give you some form of flexibility, especially the capability to read word-based flags like we used to see on other programs in GNU/Linux. Good luck with whatever stuff you're doing.
+## Summary
+To have a script that are capable to handles kinds of option flags, either ```getopts``` or *Positional Arguments*, really serves well in terms of enhancing the flexibility of the overall workflow of the program. While using ```getopts``` utility tends more towards the simplicity and readability of the script, using *Positional Arguments* and parsing them manually may give you some form of controls over your own script, especially having the ability to read long option flags like we used to see on other programs in *GNU/Linux*. So choose what you comfortable with, and good luck with whatever stuff you're doing!
 
 ## Resources
 - [testflag-1.sh | **polarpwn.gg**](https://github.com/polarpwn/polarpwn.gg/blob/main/productionSite/static/script/testflag-1.sh)
