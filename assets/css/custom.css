@@ -24,3 +24,6 @@
   --tw-gradient-to: #dea07a var(--tw-gradient-to-position); }
 
 ul,ol li { line-height: 1.5em; }
+
+.content table:not(.code-block table) { display: table }
+table { width: 100%; }
