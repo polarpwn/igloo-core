@@ -28,28 +28,30 @@ The following paragraph serves as a context for reference, incorporating various
 In an era driven by technology where sharks started golfing, you can reach me either at watcher@polarpwn.gg. For any inquiries, feel free to call me at +1-555-4567. Our team is 24 & 7, dedicated to innovation, striving to create solutions that go beyond expectations. With an annual growth rate of 15%, our company is poised for success. We believe in collaboration, and our diverse team ensures a vibrant work environment. Join us in shaping the future, where creativity meets precision and numbers tell a compelling story. Best, Huncho Muncho, prez@polarpwn.gg
 {{< /callout >}}
 
-### **A**. Characters
-| Character | Description | Pattern  | Match
-| --------  | --------    | -------- | -------- 
-| ```abc```    | Literal characters match themselves, which you may used it already in day-to-day activity. For example, the pattern ```John Doe``` will match and retrieve the string ```John Doe``` in the input | | 
-| ```[abc]```  |
-| ```[^abc]``` |
-| ```(abc)```  | 
-| ```.```      | 
-| ```\```      |
-| ```\|```     |
-| ```^```      |
-| ```$```      |
-| ```\w```     |
-| ```\W```     |
-| ```\d```     |
-| ```\D```     |
+{{< tabs items="Characters,Quantifiers,POSIX Classes,Lookarounds" >}}
+{{< tab >}}
+| Expr | Description
+| --------  | -------- 
+| ```xyz```    | Literal characters will match themselves, which is used as the most generic and basic RegEx expressions. The pattern ```Huncho``` would match the string ```Huncho``` 
+| ```[xyz]```  | Match any single character or other patterns within the bracketed list. The pattern ```[Ii][ns]``` would match the strings ```In``` ```in``` ```in``` ```is``` 
+| ```[^xyz]``` | In the context of bracketed list, the caret expression would act as a negation to the following expressions. The pattern ```[Ii][^ns]``` would match the strings ```iv``` ```it``` ```ir``` ```ie```
+| ```\|```     | The vertical bar act as an OR operand that would match either given expressions as multiple options. The pattern ```harks\|tory``` would match the strings ```harks``` ```tory``` 
+| ```(xyz)```  | Create capturing groups of characters or expressions, allowing you to extract matched substrings. The pattern ```s(harks\|tory)``` would match the strings ```sharks``` ```story``` 
+| ```.```      | Dot symbol will matches any single character in-place except a newline or line break. The pattern ```f...``` would match the strings ```fing``` ```feel``` ```free``` ```f 15```
+| ```\```      | Backslashes is act as a character escapes, allowing all kinds of characters to be treated as its nature. The pattern ```...\.gg``` would match the strings ```pwn.gg``` ```pwn.gg```
+| ```^```      | In a standalone, caret will act as an achor to match if the terms appear at the beginning of a paragraph or a line. The pattern ```^.n``` would match the string ```In```
+| ```$```      | Dollar sign will also act as an anchor to match if the terms appear at the end of a paragprah or a line. The pattern ```.g$``` would match the string ```gg```
+| ```\w```     | Represent any single word character, which in most engines includes ASCII letter, digit, and underscore inside them. The pattern ```\w\w``` would match the strings ```In``` ```an``` ```er``` ```dr```
+| ```\W```     | Represent any single character other than the above list, which include white space, line break, and special character. The pattern ```\w..\W..``` would match the strings ```era dr``` ``` ven by``` ```her@po```
+| ```\d```     | Represent any single digit or numeric character, which is from 0 to 9. The pattern ```\d.\d``` would match the strings ```1-5``` ```5-4``` ```567``` 
+| ```\D```     | Represent any single character excluding the digit itself, which also include from letter character to line break. The pattern ```\w\D.[123]``` would match the strings ```t +1``` ```is 2``` ```of 1```
 | ```\s```     |
 | ```\S```     |
 | ```\b```     |
 | ```\B```     |
+{{< /tab >}}
 
-### **B**. Quantifiers
+{{< tab >}}
 | Character | Description   
 | --------  | -------- 
 | ```{x}```    |
@@ -59,8 +61,9 @@ In an era driven by technology where sharks started golfing, you can reach me ei
 | ```+```      |
 | ```*```      |
 | ```?```      |
+{{< /tab >}}
 
-### **C**. POSIX Classes
+{{< tab >}}
 | Character | Description  
 | --------  | -------- 
 | ```[:alpha:]```  |
@@ -69,8 +72,9 @@ In an era driven by technology where sharks started golfing, you can reach me ei
 | ```[:space:]```  |
 | ```[:lower:]```  |
 | ```[:upper:]```  |
+{{< /tab >}}
 
-### **D**. Lookarounds
+{{< tab >}}
 | Character | Description  
 | --------  | -------- 
 | ```(?=abc)```    |
@@ -78,6 +82,8 @@ In an era driven by technology where sharks started golfing, you can reach me ei
 | ```(?<=abc)```   |
 | ```(?<!abc)```   |
 | ```(?:abc)```    |
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Exercises and Samples
 abc
