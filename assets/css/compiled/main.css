@@ -3210,7 +3210,7 @@ body {
 }
 :is(html[class~="dark"] .dark\:hover\:border-neutral-800:hover) {
   --tw-border-opacity: 1;
-  border-color: rgb(38 38 38 / var(--tw-border-opacity));
+  /*border-color: rgb(38 38 38 / var(--tw-border-opacity));*/
 }
 :is(html[class~="dark"] .dark\:hover\:bg-gray-100\/5:hover) {
   background-color: rgb(243 244 246 / 0.05);
