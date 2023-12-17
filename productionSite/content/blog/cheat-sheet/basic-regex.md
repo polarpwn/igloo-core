@@ -28,7 +28,7 @@ The following paragraph serves as a context for reference, incorporating various
 In an era driven by technology where sharks started golfing, you can reach me either at watcher@polarpwn.gg. For any inquiries, feel free to call me at +1-555-4567. Our team is 24 & 7, dedicated to innovation, striving to create solutions that go beyond expectations. With an annual growth rate of 15%, our company is poised for success. We believe in collaboration, and our diverse team ensures a vibrant work environment. Join us in shaping the future, where creativity meets precision and numbers tell a compelling story. Best, Huncho Muncho, prez@polarpwn.gg
 {{< /callout >}}
 
-{{< tabs items="Characters,Quantifiers,POSIX Classes,Lookarounds" >}}
+{{< tabs items="Character,Quantifier,Lookaround" >}}
 {{< tab >}}
 | Expr | Description
 | --------  | -------- 
@@ -37,6 +37,7 @@ In an era driven by technology where sharks started golfing, you can reach me ei
 | ```[^xyz]``` | In the context of bracketed list, the caret expression would act as a negation to the following expressions. The pattern ```[Ii][^ns]``` would match the strings ```iv``` ```it``` ```ir``` ```ie```
 | ```\|```     | The vertical bar act as an OR operand that would match either given expressions as multiple options. The pattern ```harks\|tory``` would match the strings ```harks``` ```tory``` 
 | ```(xyz)```  | Create capturing groups of characters or expressions, allowing you to extract matched substrings. The pattern ```s(harks\|tory)``` would match the strings ```sharks``` ```story``` 
+| ```(?:xyz)```    | Create non-capturing group of characters or expressions by not creating any backreferences to the group, while still match the overall expression. The pattern ```[\w\d]+(?:@polarpwn.gg)``` would match the strings ```watcher@polarpwn.gg``` ```prez@polarpwn.gg``` (improved performance by only processing the string that we need later on)
 | ```.```      | Dot symbol will matches any single character in-place except a newline or line break. The pattern ```f...``` would match the strings ```fing``` ```feel``` ```free``` ```f 15```
 | ```\```      | Backslashes is act as a character escapes, allowing all kinds of characters to be treated as its nature. The pattern ```...\.gg``` would match the strings ```pwn.gg``` ```pwn.gg```
 | ```^```      | In a standalone, caret will act as an achor to match if the terms appear at the beginning of a paragraph or a line. The pattern ```^.n``` would match the string ```In```
@@ -46,7 +47,6 @@ In an era driven by technology where sharks started golfing, you can reach me ei
 | ```\d```     | Represent any single digit or numeric character, which is from 0 to 9. The pattern ```\d.\d``` would match the strings ```1-5``` ```5-4``` ```567``` 
 | ```\D```     | Represent any single character excluding the digit itself, which include from letter character to line break. The pattern ```\w\D.[123]``` would match the strings ```t +1``` ```is 2``` ```of 1```
 | ```\b```     | Represent a word boundary that is not act as a character, but as a zero-width assertion. This expression could be put either on one end or both end of the given expression, which often used to match whole word. • The pattern ```\w.y\b``` would match the strings ```ogy``` ```any``` ```any``` ```ity``` (end of word) • The pattern ```\b\w[aiueo]``` would match the strings ```te``` ```go``` ```yo``` ```ca``` (beginning of word) • The pattern ```\b\w[aiueo]\b``` would match the strings ```me``` ```to``` ```go``` ```We``` (complete word)
-
 {{< /tab >}}
 
 {{< tab >}}
@@ -56,30 +56,18 @@ In an era driven by technology where sharks started golfing, you can reach me ei
 | ```{n,}```   | Curly bracket with trailing comma will match atleast ```n``` times, into then as much as the preceeding character or expression could do to the rest. The pattern ```\d{1,}\D{2}``` would match the strings ```4567.``` ```24 &``` ```15%``` ```7, ```, with white space included
 | ```{m,n}```  | Curly bracket with 2 digits inside it will indicates the minimum and maximum iteration of the preceeding character or expression. The pattern ```\b\w{3,4}[aiueo]\b``` would match the strings ```where``` ```free``` ```rate``` ```where```
 | ```[x-y]```  | In the context of bracketed list, the dash symbol will act as a character range, which works for both digits and letters and can be used for multiple instances within the scope. The pattern ```[A-Ha-h].[O-Zo-z]``` would match the strings ```hno``` ```her``` ```e s``` ```har```    
-  | ```+```      | Plus sign will match atleast 1 or more occurrences of preceeding character or expression greedily, which is the same as ```{1,}```. The pattern ```\w+.\w+``` would match the strings ```In an``` ```era driven``` ```by technology``` ```where sharks```
-| ```*```      | Asterisk sign will match that allow 0 or more occurrences of preceeding character or expression greedily, which is the same as ```{0,}```. The pattern ```(prez)*@\w+\.\w+``` would match the strings ```@polarpwn.gg``` ```prez@polarpwn.gg```  
-| ```?```      |
+  | ```+```      | Plus sign will match atleast 1 or more occurrences of preceeding character or expression (greedy), which is the same as ```{1,}```. The pattern ```\w+.\w+``` would match the strings ```In an``` ```era driven``` ```by technology``` ```where sharks```
+| ```*```      | Asterisk sign will match that allow 0 or more occurrences of preceeding character or expression (greedy), which is the same as ```{0,}```. The pattern ```(p\w+)*@\w+\.\w+``` would match the strings ```@polarpwn.gg``` ```prez@polarpwn.gg```  
+| ```?```      | Question mark sign will make the preceding character or expression as an optional clause, or atleast one occurrence only (lazy), which is the same as ```{0,1}```. The pattern ```\bst?\w+``` would match the strings ```sharks``` ```started``` ```striving``` ```solutions```
 {{< /tab >}}
 
 {{< tab >}}
-| Character | Description  
+| Expr | Description  
 | --------  | -------- 
-| ```[:alpha:]```  |
-| ```[:digit:]```  |
-| ```[:alnum:]```  |
-| ```[:space:]```  |
-| ```[:lower:]```  |
-| ```[:upper:]```  |
-{{< /tab >}}
-
-{{< tab >}}
-| Character | Description  
-| --------  | -------- 
-| ```(?=abc)```    |
-| ```(?!abc)```    |
-| ```(?<=abc)```   |
-| ```(?<!abc)```   |
-| ```(?:abc)```    |
+| ```(?=abc)```    | Positive lookahead asserts that a certain pattern must be present at particular position within the input string (if statement). The pattern ```\d{1,}(?=-\d{3,})``` would match the strings ```1``` ```555``` , with the condition on having ```-``` sign followed by 3 digits or more after the last expression 
+| ```(?!abc)```    | Negative lookahead asserts that a certain pattern must not be present at a particular position within the input string (negation if statement). The pattern ```\d{1,}(?!-\d{3,})``` would match the strings ```55``` ```4567``` ```24``` ```7``` , with the condition on having no ```-``` sign and not followed by ```3``` digits or more after the last expression 
+| ```(?<=xyz)```   | Positive lookbehind asserts that a certain pattern must be present immidiately before the current position in the input string (if statement). The pattern ```(?<=@)\w+\.\w{2}``` would match the strings ```polarpwn.gg``` ```polarpwn.gg``` , with the condition on having the ```@``` sign before the start of the given expressions
+| ```(?<!xyz)```   | Negative lookbehind asserts that a certain pattern must not be present immidiately before the current position in the input string (negation if statement). The pattern ```(?<!\s)\w{3,}``` would match the strings ```riven``` ```echnology``` ```harks``` ```tarted``` , with the condition on having no white space before the start of the given expression
 {{< /tab >}}
 {{< /tabs >}}
 
