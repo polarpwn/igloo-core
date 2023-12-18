@@ -72,7 +72,26 @@ In an era driven by technology where sharks started golfing, you can reach me ei
 {{< /tabs >}}
 
 ## Exercises and Samples
-abc
+### **A**. RegexOne
+| Match Strings | Expression  
+| -------- | --------
+| ```abcdefg``` ```abcde``` ```abc``` | ```abc\w+``` ```\w+```
+| ```abc123xyz``` ```define "123"``` ```var g = 123;``` | ```\w+(\D+123)?.``` ```\w+(\D+\d+)?.``` 
+| ```cat.``` ```896``` ```?=+.``` , skipped ```abc1``` | ```.{0,}\.``` ```(\w+\|\D+)?\.```
+| ```can``` ```man``` ```fan``` , skipped ```dan``` ```ran``` ```pan``` | ```[cmf]an``` ```[^drp]an```
+| ```Ana``` ```Bob``` ```Cpc``` , skipped ```aax``` ```bby``` ```ccz``` | ```[A-C]\w+``` ```[^a-c]\w+```
+| ```wazzzzzup``` ```wazzzup``` , skipped ```wazup``` | ```waz{2,}up```
+| ```aaaabcc``` ```aabbbbc``` ```aacc``` , skipped ```a``` | ```a{2,}\w+``` ```a+(b+)?c+```
+| ```1 file found?``` ```2 files found?``` ```24 files found?``` , skipped ```No files found.``` | ```\d+\s\w+\s\w+\?``` ```\d+ files? found\?```
+| ```1.   abc``` ```2.	abc``` ```3.           abc``` , skipped ```4.abc``` | ```\d\.\s{1,}\w+``` ```[1-4].\W+\w+```
+| ```Mission: successful``` , skipped ```Last Mission: unsuccessful``` ```Next Mission: successful upon capture of target``` | ```^Mission: successful``` ```^M\D+``` 
+| ```file_record_transcript.pdf``` ```file_07241999.pdf``` ```testfile_fake.pdf.tmp``` | ```^(file\w+)\.pdf```
+| ```Jan 1987``` ```May 1969``` ```Aug 2011``` | ```(\w{3}\s(\d+))```
+| ```1280x720``` ```1920x1600``` ```1024x768``` | ```((\d+)x(\d+))```
+| ```I love cats``` ```I love dogs``` , skipped ```I love logs``` ```I love cogs``` | ```I love (cats\|dogs)``` ```.+(cats\|dogs)```
+| ```The quick brown fox jumps over the lazy dog.``` ```There were 614 instances of students getting 90.0% or above.``` ```The FCC had to censor the network for saying &$#*@!.``` | ```.+ ```
+
+### **B**. Regex 101
 
 ## Resources
 - [Learn, Build, and Test RegEx | **RegExr**](https://regexr.com/)
@@ -83,3 +102,4 @@ abc
 - [How to Read and Use Regular Expressions | **Hall**](https://www.hallme.com/blog/the-power-of-regular-expressions/)
 - [Quick-Start: RegEx Cheat Sheet | **RexEgg**](https://www.rexegg.com/regex-quickstart.html)
 - [Regular Expression List | **jacksonfdam/gist**](https://gist.github.com/jacksonfdam/3000275)
+- [What Is a Non-Capturing Group in Regular Expressions? | **Educative**](https://www.educative.io/answers/what-is-a-non-capturing-group-in-regular-expressions)
