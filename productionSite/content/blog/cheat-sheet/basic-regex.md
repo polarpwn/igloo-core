@@ -72,7 +72,10 @@ In an era driven by technology where sharks started golfing, you can reach me ei
 {{< /tabs >}}
 
 ## Exercises and Samples
-### **A**. RegexOne
+In this *Exercise and Samples* section, we'll leverage [RegexOne](https://regexone.com/)'s interactive platform, on both lessons and practice problems, to reinforce the concepts we explore. Each exercise will be accompanied by real-world samples and practical applications, ensuring that you not only grasp the theory but also see how regular expressions come to life in practical scenarios. Here are some case problems that are laid out on a table format, one to display strings to matched on, and the optional expressions itself:
+
+<div class="tabs-panel rounded pt-6 hidden data-[state=selected]:block table-scroll">
+
 | Match Strings | Expression  
 | -------- | --------
 | ```abcdefg``` ```abcde``` ```abc``` | ```abc\w+``` ```\w+```
@@ -85,27 +88,25 @@ In an era driven by technology where sharks started golfing, you can reach me ei
 | ```1 file found?``` ```2 files found?``` ```24 files found?``` , skipped ```No files found.``` | ```\d+\s\w+\s\w+\?``` ```\d+ files? found\?```
 | ```1.   abc``` ```2.	abc``` ```3.           abc``` , skipped ```4.abc``` | ```\d\.\s{1,}\w+``` ```[1-4].\W+\w+```
 | ```Mission: successful``` , skipped ```Last Mission: unsuccessful``` ```Next Mission: successful upon capture of target``` | ```^Mission: successful``` ```^M\D+``` 
-| ```file_record_transcript.pdf``` ```file_07241999.pdf``` ```testfile_fake.pdf.tmp``` | ```^(file\w+)\.pdf```
-| ```Jan 1987``` ```May 1969``` ```Aug 2011``` | ```(\w{3}\s(\d+))```
-| ```1280x720``` ```1920x1600``` ```1024x768``` | ```((\d+)x(\d+))```
+| ```file_record_transcript.pdf``` ```file_07241999.pdf``` ```testfile_fake.pdf.tmp``` | ```^(file\w+)\.pdf``` capturing ```(file\w+)```
+| ```Jan 1987``` ```May 1969``` ```Aug 2011``` | ```(\w{3}\s(\d+))``` capturing ```(\w{3}\s(\d+))``` ```(\d+)```
+| ```1280x720``` ```1920x1600``` ```1024x768``` | ```(\d+)x(\d+)``` capturing ```(\d+)``` ```(\d+)```
 | ```I love cats``` ```I love dogs``` , skipped ```I love logs``` ```I love cogs``` | ```I love (cats\|dogs)``` ```.+(cats\|dogs)```
 | ```The quick brown fox jumps over the lazy dog.``` ```There were 614 instances of students getting 90.0% or above.``` ```The FCC had to censor the network for saying &$#*@!.``` | ```.+ ```
 | ```3.14529``` ```-255.34``` ```128 1.9e10``` ```123,340.00``` , skipped ```720p``` | ```^-?\d+(,\d+)*(\.\d+(e\d+)?)?$``` ```^-?\d+[,\.\d+]*e?\d+$```
-| ```415-555-1234``` ```650-555-2345``` ```(416)555-3456``` ```202 555 4567``` ```4035555678``` ```1 416 555 9292``` , grouped ```415``` ```650``` ```416``` ```202``` ```403``` ```416``` respectively | ```^(?:\d\s)?[\(]?(\d{3})[\)-\s\d{3}]?\d{3}[-\s]?\d{4}``` capturing ```(\d{3})```
-| ```tom@hogwarts.com``` ```tom.riddle@hogwarts.com``` ```tom.riddle+regexone@hogwarts.com``` ```tom@hogwarts.eu.com``` ```potter@hogwarts.com``` ```harry@hogwarts.com``` ```hermione+regexone@hogwarts.com``` , grouped ```tom``` ```tom.riddle``` ```tom.riddle``` ```tom``` ```potter``` ```harry``` ```hermione``` respectively | ```^([\w.]*)[\+\w]*@hogwarts\.\w{2,3}(?:\.\w{2,3})?``` capturing ```([\w.]*)```
-| ```<a>This is a link</a>``` ```<a href='https://regexone.com'>Link</a>``` ```<div class='test_style'>Test</div>``` ```<div>Hello <span>world</span></div>``` , grouped ```a``` ```a``` ```div``` ```div``` respectively | ```<(a\|div)(?:\s?\w+='.+')?>.+<(?:\/div\|\/a)>``` capturing ```(a\|div)``` 
-| ```img0912.jpg``` ```updated_img0912.png``` ```favicon.gif``` , grouped ```img0912``` ```jpg``` ```updated_img0912``` ```png``` ```favicon``` ```gif``` respectively , skipped ```.bash_profile``` ```workspace.doc``` ```documentation.html``` ```img0912.jpg.tmp``` ```access.lock``` | ```^(\w+)\.(jpg\|gif\|png)$``` capturing ```(\w+)``` ```(jpg\|gif\|png)```  
+| ```415-555-1234``` ```650-555-2345``` ```(416)555-3456``` ```202 555 4567``` ```4035555678``` ```1 416 555 9292``` | ```^(?:\d\s)?[\(]?(\d{3})[\)-\s\d{3}]?\d{3}[-\s]?\d{4}``` capturing ```(\d{3})```
+| ```tom@hogwarts.com``` ```tom.riddle@hogwarts.com``` ```tom.riddle+regexone@hogwarts.com``` ```tom@hogwarts.eu.com``` ```potter@hogwarts.com``` ```harry@hogwarts.com``` ```hermione+regexone@hogwarts.com``` | ```^([\w.]*)[\+\w]*@hogwarts\.\w{2,3}(?:\.\w{2,3})?``` capturing ```([\w.]*)```
+| ```<a>This is a link</a>``` ```<a href='https://regexone.com'>Link</a>``` ```<div class='test_style'>Test</div>``` ```<div>Hello <span>world</span></div>``` | ```<(a\|div)(?:\s?\w+='.+')?>.+<(?:\/div\|\/a)>``` capturing ```(a\|div)``` 
+| ```img0912.jpg``` ```updated_img0912.png``` ```favicon.gif``` , skipped ```.bash_profile``` ```workspace.doc``` ```documentation.html``` ```img0912.jpg.tmp``` ```access.lock``` | ```^(\w+)\.(jpg\|gif\|png)$``` capturing ```(\w+)``` ```(jpg\|gif\|png)```  
 | ```			The quick brown fox...``` ```   jumps over the lazy dog.``` , with both strings have multiple preceeding white spaces | ```^\s+(.+)``` capturing ```(.+)```
-| ```E/( 1553):   at widget.List.makeView(ListView.java:1727)``` ```E/( 1553):   at widget.List.fillDown(ListView.java:652)``` ```E/( 1553):   at widget.List.fillFrom(ListView.java:709)``` , grouped ```makeView``` ```ListView.java``` ```1727``` ```fillDown``` ```ListView.java``` ```652``` ```fillFrom``` ```ListView.java``` ```709``` respectively , skipped ```W/dalvikvm( 1553): threadid=1: uncaught exception``` ```E/( 1553): FATAL EXCEPTION: main``` ```E/( 1553): java.lang.StringIndexOutOfBoundsException``` | ```.+\):\s+at widget\.List\.(\w+)\((\w+\.java):(\d+)\)``` capturing ```(\w+)``` ```(\w+\.java)``` ```(\d+)```
-| ```...``` | ```...``` 
-https://regexone.com/problem/extracting_log_data?
+| ```E/( 1553):   at widget.List.makeView(ListView.java:1727)``` ```E/( 1553):   at widget.List.fillDown(ListView.java:652)``` ```E/( 1553):   at widget.List.fillFrom(ListView.java:709)``` , skipped ```W/dalvikvm( 1553): threadid=1: uncaught exception``` ```E/( 1553): FATAL EXCEPTION: main``` ```E/( 1553): java.lang.StringIndexOutOfBoundsException``` | ```.+\):\s+at widget\.List\.(\w+)\((\w+\.java):(\d+)\)``` capturing ```(\w+)``` ```(\w+\.java)``` ```(\d+)```
+| ```ftp://file_server.com:21/top_secret/life_changing_plans.pdf``` ```https://regexone.com/lesson/introduction#section``` ```file://localhost:4040/zip_file``` ```https://s3cur3-server.com:9999/``` ```market://search/angry%20birds``` | ```(https?\|ftp\|file\|market)://(\w+[\.-]?\w+\.?\w+):?(\d+)?.+``` capturing ```(https?\|ftp\|file\|market)``` ```(\w+[\.-]?\w+\.?\w+)``` ```(\d+)```
 
-### **B**. Regex 101
+</div>
 
 ## Resources
 - [Learn, Build, and Test RegEx | **RegExr**](https://regexr.com/)
 - [Learn Regular Expression | **RegexOne**](https://regexone.com/)
-- [RegEx 101 | **RegEx Learn**](https://regexlearn.com/learn/regex101)
 
 ## References
 - [How to Read and Use Regular Expressions | **Hall**](https://www.hallme.com/blog/the-power-of-regular-expressions/)
