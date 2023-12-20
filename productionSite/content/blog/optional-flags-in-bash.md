@@ -1,7 +1,6 @@
 ---
 title: Simple Usage of Optional Flags in Bash Script 
 linkTitle: Optional Flags in Bash
-date: 2020-01-01
 authors:
   - name: monsieurDuke
     link: https://github.com/monsieurDuke
@@ -9,7 +8,7 @@ cascade:
   type: docs
 weight: 100000
 ---
-*In this blog series, we are going to dive in to the 10% of the power from a gem within the realm of Linux scripting, which is optional flags. This basic concept would enchance your Bash scripts by miles while adding tons of flexibility to your code and streamlining your process, making it more efficient for the 1337 users*
+*In this blog series, we are going to dive in to the 10% of the power from a gem within the realm of Linux scripting, which is optional flags. This basic concept would enchance your Bash scripts by miles while adding tons of flexibility to your code and streamlining your process, making it more efficient for the 1337 users.*
 <!--more-->
 
 ## What Is Optional Flags?
