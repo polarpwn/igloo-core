@@ -28,3 +28,9 @@ ul,ol li { line-height: 1.5em; }
 .content table:not(.code-block table) { display: table }
 table { width: 100%; line-height: 1.75rem; }
 
+.table-scroll {
+  display: block;
+  overflow-x: auto;
+  padding-bottom: 1px;
+}
+
