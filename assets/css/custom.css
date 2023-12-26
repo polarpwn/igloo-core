@@ -34,3 +34,8 @@ table { width: 100%; line-height: 1.75rem; }
   padding-bottom: 10px;
 }
 
+.lntable { line-height: 1.25rem; } 
+.content img { 
+  padding: 0.5rem 0rem 0rem 0.5rem;
+  border-radius: 0rem;
+}
