@@ -17,7 +17,7 @@ Join us for our brief and focused 10-15 minute meeting designed to keep the team
 - Highlight any potential blockers or obstacles they are facing
 - Open Q&A for any clarity and alignment if needed
 
-The meeting itself is held in [Discord]() at 10:00 AM (GMT+7), which all parties and members will be notified via both [Calendar]() and [Telegram]() Notification Bot prior to the stand-up.
+The meeting itself is held in [*Discord*]() at 10:00 AM (GMT+7), which all parties and members will be notified via both [*Calendar*]() and [*Telegram*]() Notification Bot prior to the stand-up.
 
 {{< cards >}}
   {{< card link="" title="Agenda" icon="book-open" subtitle="GitHub Project Board" >}}
@@ -27,12 +27,12 @@ The meeting itself is held in [Discord]() at 10:00 AM (GMT+7), which all parties
 {{< /cards >}}
 
 ## Forum
-Dive into the heart of our technical discussions and collaborative projects on our forum. Contribute to ongoing initiatives, share your projects, and stay updated on the latest developments in the [GitHub Discussion](https://github.com/polarpwn/polarpwn.gg/discussions). Stuff that you can open for the discussion are include:
+Dive into the heart of our technical discussions and collaborative projects on our forum. Contribute to ongoing initiatives, share your projects, and stay updated on the latest developments in the [*GitHub Discussion*](https://github.com/polarpwn/polarpwn.gg/discussions/). Stuff that you can open for the discussion are include:
 - Ask generic questions or technical issues
 - Highlight your contributions
 - Share your ideas or potential features that are great to be added
 
-Despite the technical issues, bug reports should still be posted at [GitHub Issues](https://github.com/polarpwn/polarpwn.gg/issues). Our maintainer will handle and move a key port of a discussion and track it as an issue of if its leading or potentially considered as one, while still referring to the discussion's ID.
+Despite the technical issues, bug reports should still be posted at [*GitHub Issues*](https://github.com/polarpwn/polarpwn.gg/issues/). Our maintainer will handle and move a key port of a discussion and track it as an issue of if its leading or potentially considered as one, while still referring to the discussion's ID.
 
 ## Newsletter
 Stay in the cybersecurity loop with our Newsletter. Join our open community to receive timely updates on the latest blogs, write-ups, and research papers. Be the first to know about any new releases and developments in our in-house payload and security tools, ensuring you stay informed and ahead of the curve in the dynamic world of cybersecurity.
