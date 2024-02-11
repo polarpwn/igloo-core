@@ -33,10 +33,11 @@ $ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -
 $ sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
 # add the repository to APT sources
+# you might wanted to change to $UBUNTU_CODENAME instead for Ubuntu derivative
 $ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-$ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 ```bash
 $ sudo apt-get update
@@ -45,7 +46,7 @@ $ sudo usermod -aG docker icat # replace `icat` with your username
 ```
 
 ### Building through Docker Compose
-To streamline the deployment of DVWA, we'll leverage Docker Compose—a tool for defining and running multi-container Docker applications. Our starting point is the [digininja/DVWA](https://github.com/digininja/DVWA/) GitHub repository, a comprehensive resource maintained by the security expert Digininja. This repository provides a Dockerized version of DVWA, making it convenient for us to set up our vulnerable web application in a controlled environment. Here is the configuration of ```compose.yml``` that we will be using
+To streamline the deployment of DVWA, we'll leverage Docker Compose—a tool for defining and running multi-container Docker applications. Our starting point is the [digininja/DVWA](https://github.com/digininja/DVWA/) GitHub repository, a comprehensive resource maintained by the security expert Digininja. This repository provides a Dockerized version of DVWA, making it convenient for us to set up our vulnerable web application in a controlled environment. Here is the base configuration of ```compose.yml``` that we will be using, which you can modified yourself to suit the needs.
 
 ```bash {linenos=table,linenostart=1,filename="compose.yml"}
 volumes:
@@ -82,6 +83,7 @@ services:
       - dvwa
     restart: unless-stopped
 ```
+Here, we are going to clone the official repository. onto then, we can build the DVWA services by running the container with predifined configurations of the compose file, while detaching the service to be a background job
 
 ```bash
 $ git clone https://github.com/digininja/DVWA.git
